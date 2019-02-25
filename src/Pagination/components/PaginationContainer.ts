@@ -48,7 +48,7 @@ class PaginationContainer extends Component<ModelerProps, PaginationContainerSta
     constructor(props: ModelerProps) {
         super(props);
 
-        logger.debug(this.props.friendlyId, ".constructor");
+        logger.debug(props);
 
         this.updateListView = this.updateListView.bind(this);
 
@@ -66,7 +66,7 @@ class PaginationContainer extends Component<ModelerProps, PaginationContainerSta
             alertMessage: Validate.validateProps(this.props),
             pageSize: this.viewStateManager.getPageState("pageSize", undefined), // We dont know, based on the modeler configuration of the list view.
             offset: this.viewStateManager.getPageState("offset", 0),
-            isPersisted: this.viewStateManager.getPageState("isPersisted", false)
+            isPersisted: this.viewStateManager.getPageState("isPersisted", true)
         };
     }
 
